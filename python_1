@@ -1,0 +1,35 @@
+import datetime
+
+print("bonjour")
+
+nom1=input("quel est ton nom ?")
+annee1=input("en quel année es-tu né(e) ?")
+annee1=int(annee1)
+nom2=input("quel est le nom de ton voisin ?")
+annee2=input("en quel année ton/ta voisin(e) est-il né(e)")
+annee2=int(annee2)
+
+now=datetime.datetime.now()
+now_year=now.year
+
+age1=now_year-annee1
+age2=now_year-annee2
+
+print(nom1,"a",age1,"ans.")
+print(nom2,"a",age2,"ans.")
+
+difference=age2-age1
+
+if age1>age2:
+  print(nom1,"est plus agé que",nom2)
+  
+elif age1==age2:
+  print(nom2, "et", nom1, "ont le même age.")
+  
+elif age2>age1:
+  print(nom2,"est plus agé que",nom1)
+  difference=age2-age1
+  print(nom2,"a",difference,"années de plus que",nom1)
+  
+else:
+  print("Une situation innatendue a été rencontrée.")
