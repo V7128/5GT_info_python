@@ -1,0 +1,7 @@
+print('bonjour!') 
+nombre=input ('combien de fois voulez vous être salué?')
+
+nombre=int(nombre)
+
+for i in range(nombre):
+  print ('Bonjour')
