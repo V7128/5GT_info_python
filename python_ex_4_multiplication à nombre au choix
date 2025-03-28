@@ -1,0 +1,8 @@
+print('bonjour!') 
+#nombre=input ('combien de fois souhaitez-vous avoir la table de 7?')
+nombre=input("de quel nombre voulez vous la table de multiplication ?")
+nombre=int(nombre)
+
+for i in range(11):
+  résultat=i*nombre
+  print (i,"x",nombre,"=", résultat)
