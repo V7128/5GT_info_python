@@ -1,0 +1,8 @@
+print('bonjour!') 
+nombre=input ('combien de fois souhaitez-vous avoir la table de 7?')
+
+nombre=int(nombre)
+
+for i in range(nombre):
+  résultat=i*7
+  print (i,"x 7 =", résultat)
