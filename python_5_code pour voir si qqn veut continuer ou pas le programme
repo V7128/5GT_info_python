@@ -1,0 +1,6 @@
+print('bonjour!') 
+
+continuer=input("voulez-vous continuer ?")
+while continuer not in['oui', 'non']:
+  print("veuillez répondre par 'oui' ou 'non'")
+  continuer=input("voulez-vous continuer ?")
