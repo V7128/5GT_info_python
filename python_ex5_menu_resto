@@ -1,0 +1,25 @@
+print("Bienvenu(e) dans notre restaurant !")
+print("Pour un hamburger, tapez 1")
+print("pour une pizza, taper 2")
+print("Pour une salade, taper 3")
+
+choix=input("Votre choix:")
+choix=int(choix)
+
+while choix not in[1,2,3]:
+  print("veuillez répondre par '1','2' ou '3'")
+  choix=input("votre choix:")
+  choix=int(choix)
+
+if choix==1:
+  print("Vous aviez choisi un hamburger")
+  
+elif choix==2:
+  print("Vous aviez choisi une pizza")
+  
+elif choix==3:
+  print("Vous aviez choisi unne salade")
+
+
+else:
+  pass
