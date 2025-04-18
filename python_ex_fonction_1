@@ -1,0 +1,7 @@
+def pair_impaire():
+  nombre=input("donnez-moi un nombre")
+  nombre=int(nombre)
+  if nombre%2==0:
+    reponse="pair"
+  else: reponse="impaire"
+( voir photo sur tel pour le reste )
