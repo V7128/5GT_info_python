@@ -1,0 +1,15 @@
+print("Bonjour et bienvenu(e) dans ce programme qui vous dit bonjour.")
+
+
+
+choix="o"
+
+while choix == "o":
+  print("bonjour")
+  choix=input("voulez vous continuer?")
+
+  while choix not in ["n", "o"]:
+    choix = input("veuillez répondre par oui (o) ou non (n)")
+    
+print("Au revoir!")
+
