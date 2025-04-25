@@ -1,0 +1,6 @@
+def bonjour(nom):
+  print("bonjour",nom)
+  print("comment vas-tu?")
+
+bonjour("gautier")
+bonjour("d'one")
