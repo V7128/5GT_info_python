@@ -1,0 +1,21 @@
+def bonjour():
+  print("bonjour")
+  continuer=input("est-ce que vous voulez continuer?")
+  valid=is_answer_valid(continuer)
+  while valid==False:
+    print("veuillez repondre par oui(o) ou par non(n)")
+    continuer=input("est-ce que vous voulez continuer?")
+    valid=is_answer_valid(continuer)
+    
+  if continuer=="o":
+    bonjour()
+  else:
+    print("au revoir")
+def is_answer_valid(answer):
+    if answer in ["o","n"]:
+       valid=True
+    else:
+       valid=False
+   return valid
+
+bonjour() 
