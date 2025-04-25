@@ -1,0 +1,71 @@
+from math import pi
+
+
+def aire_triangle():
+  hauteur=input("que vaut sa hauteur?")
+  hauteur=float(hauteur)
+  base=input("que vaut sa base?")
+  base=float(base)
+  aire=(base*hauter)/2
+  print("l'aire du triangle vaut",aire,".")
+  menu()
+
+
+def aire_carré():
+  coté=input("que vaut son coté?")
+  coté=float(coté)
+  aire=coté**2
+  print("l'aire du carré vaut",aire,".")
+  menu()
+  
+def aire_rectangtle():
+  longueur=input("que vaut sa longueur?")
+  longueur=float(longueur)
+  largeur =input("que vaut sa largeur?")
+  largeur=float(largeur)
+  aire=longueur*largeur
+  print("l'aire du rectangle vaut",aire,".")
+  menu()
+
+
+def aire_cercle():
+  rayon=input("que vaut son rayon?")
+  rayon=float(rayon)
+  aire=round(rayon**2*pi,3)
+  print("l'aire du cercle vaut",aire,".")
+  menu()
+
+def quit():
+  print("Au revoir!")
+
+def menu():
+  
+  print("pour calculez l'aire d'un triangle tapez (1).")
+  print("pour calculez l'aire d'un carré tapez (2).")
+  print("pour calculez l'aire d'un rectangle tapez (3).")
+  print("pour calculez l'aire d'un cercle tapez (4).")
+  print("pour quittez tapez (5)")
+
+  choix=input("votre choix:")
+  if choix == "1":
+    aire_triangle()
+
+  elif choix=="2":
+    aire_carré()
+    
+  elif choix=="3":
+    aire_rectangtle()
+    
+  elif choi=="4":
+    aire_cercle()
+
+    
+  elif choix=="5":
+    quit()
+
+  else:
+    print("je n'ai malheureusement pas compris votre réponse...")
+
+if__name__=="__main__":
+  print("bienvenue dans ce programme qui calcule l'aire d'une série de       formes!")
+  menu()
