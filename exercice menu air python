@@ -48,6 +48,7 @@ def menu():
   print("pour quittez tapez (5)")
 
   choix=input("votre choix:")
+  choix=int(choix)
   if choix == "1":
     aire_triangle()
 
