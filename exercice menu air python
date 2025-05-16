@@ -39,6 +39,7 @@ def quit():
   print("Au revoir!")
 
 def menu():
+  print("bienvenue dans ce programme permettant de calculer l'aire de certaines formes ")
   
   print("pour calculez l'aire d'un triangle tapez (1).")
   print("pour calculez l'aire d'un carré tapez (2).")
