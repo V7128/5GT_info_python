@@ -1,22 +1,20 @@
 list_gout=[]
 
 def menu():
-  print("ecris ce que tu aimes et j'en ferrai une liste.")
-  print("tapes stop si tu souhaites arreter et voir ta liste!")
-  print()
-  réponse=input("qu'est ce que tu aimes?")
-
-if réponse=="stop":
-  print("voici ce que tu aimes : ")
-  for gout in list_gout:
-    print(gout)
+    print("ecris ce que tu aimes et j'en ferrai une liste.")
+    print("tapes stop si tu souhaites arreter et voir ta liste!")
     print()
-    print("au revoir!")
-
-else:
-  list_gout.append(réponse)
-  print()
-  menu()
+    reponse=input("qu'est ce que tu aimes?")
+    if reponse=="stop":
+        print("voici ce que tu aimes : ")
+        for gout in list_gout:
+            print(gout)
+            print()
+        print("au revoir!")
+    else:
+        list_gout.append(reponse)
+        print()
+        menu()
 
 if __name__=="__main__":
   print("bienvenue dans ce programme qui vous demande ce que vous aimez!")
