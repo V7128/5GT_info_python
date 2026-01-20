@@ -1,13 +1,21 @@
 
 
-
-
 def prod_list_voiture():
     """Lecture du fichier contenant les informations et production d'une liste où chaque élément est un dict contenant les informations d'un véhicule"""
+    list_voitures=[]
     with open('voitures_location(3).tsv', 'r', encoding='utf8') as f: #pour ouvrir un fichier en python
         for ligne in f:
+           dict_datas={} #on peut aussi mettre dict() {} a la place de {}
            datas=ligne.strip().split('\t')
-           print(datas)
+           dict_datas['id']=int(datas[0])
+           dict_datas['moteur']=datas[1]
+           dict_datas['kilometrage']=int(datas[2])
+           dict_datas['marque']=datas[3]
+           dict_datas['place']=int(datas[4])
+           dict_datas['annee']=int(datas[5])
+           list_voitures.append(dict_datas)
+    return list_voitures
                
 if __name__=="__main__":
-    prod_list_voiture()
+    list_voitures=prod_list_voiture()
+    print(list_voitures)
