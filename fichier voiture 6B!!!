@@ -1,9 +1,5 @@
 
 
-
-
-
-
 def prod_list_voiture():
     """Lecture du fichier contenant les informations et production d'une liste où chaque élément est un dict contenant les informations d'un véhicule"""
     list_voitures=[]
@@ -28,13 +24,20 @@ def menu():
     print("pour supprimer un véhicule de la liste, tapez 5")
     print("pour enregistrer la liste dans un fichier, tapez 6")
     choix=input("votre choix: ")
-    choix=int(choix)
-    
+    try :
+        choix=int(choix)
+    except:
+        menu()
+
     while choix not in [1,2,3,4,5,6]:
         print("veuillez choisir un nombre entre 1 et 6")
         choix=input("votre choix: ")
         choix=int(choix)
-
+        try :
+            choix=int(choix)
+        except:
+            menu()
+            
 if __name__=="__main__":
     list_voitures=prod_list_voiture()
     menu()
@@ -44,3 +47,4 @@ if __name__=="__main__":
         #si on met print(voiture ['marque']) il affiche just la marque.
         #si on met print(voiture.values())= list des valeurs pour chaque voiture.
         #si on met print(voiture.keys())= juste les nom des 'list'
+        
