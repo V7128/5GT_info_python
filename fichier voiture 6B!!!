@@ -1,5 +1,7 @@
 
 
+
+
 def prod_list_voiture():
     """Lecture du fichier contenant les informations et production d'une liste où chaque élément est un dict contenant les informations d'un véhicule"""
     list_voitures=[]
@@ -15,7 +17,27 @@ def prod_list_voiture():
            dict_datas['annee']=int(datas[5])
            list_voitures.append(dict_datas)
     return list_voitures
-               
+
+def menu():
+    print("pour afficher les véhicules trop anciens, tapez 1")
+    print("pour afficher une liste des véhicules par type de carburant, tapez 2")
+    print("pour afficher une liste des voitures de sport, tapez 3")
+    print("pour enregistrer un nouveau véhicule de la liste, tapez 4")
+    print("pour supprimer un véhicule de la liste, tapez 5")
+    print("pour enregistrer la liste dans un fichier, tapez 6")
+    choix=input("votre choix: ")
+    choix=int(choix)
+    
+    while choix not in [1,2,3,4,5,6]:
+        print("veuillez choisir un nombre entre 1 et 6")
+        choix=input("votre choix: ")
+        choix=int(choix)
+
 if __name__=="__main__":
     list_voitures=prod_list_voiture()
-    print(list_voitures)
+    for voiture in list_voitures : # 'voiture' est le nom d'une variable temporaire défini par 'for in liste', pourrait avoir n'import quel nom
+        menu()
+        #si on met juste print(voiture) il affiche une list structuré.
+        #si on met print(voiture ['marque']) il affiche just la marque.
+        #si on met print(voiture.values())= list des valeurs pour chaque voiture.
+        #si on met print(voiture.keys())= juste les nom des 'list'
