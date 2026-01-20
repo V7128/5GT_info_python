@@ -2,6 +2,8 @@
 
 
 
+
+
 def prod_list_voiture():
     """Lecture du fichier contenant les informations et production d'une liste où chaque élément est un dict contenant les informations d'un véhicule"""
     list_voitures=[]
@@ -35,8 +37,9 @@ def menu():
 
 if __name__=="__main__":
     list_voitures=prod_list_voiture()
-    for voiture in list_voitures : # 'voiture' est le nom d'une variable temporaire défini par 'for in liste', pourrait avoir n'import quel nom
-        menu()
+    menu()
+    
+     # for voiture in list_voitures : # 'voiture' est le nom d'une variable temporaire défini par 'for in liste', pourrait avoir n'import quel nom
         #si on met juste print(voiture) il affiche une list structuré.
         #si on met print(voiture ['marque']) il affiche just la marque.
         #si on met print(voiture.values())= list des valeurs pour chaque voiture.
