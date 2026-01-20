@@ -1,11 +1,13 @@
 
 
+
+
 def prod_list_voiture():
     """Lecture du fichier contenant les informations et production d'une liste où chaque élément est un dict contenant les informations d'un véhicule"""
-     with open('nom_du_fichier.txt', 'r', encoding='utf8') as f:
-       for ligne in f:
-           ligne.strip.strip().split('\t')
-           print(data)
+    with open('voitures_location(3).tsv', 'r', encoding='utf8') as f: #pour ouvrir un fichier en python
+        for ligne in f:
+           datas=ligne.strip().split('\t')
+           print(datas)
                
-if__name__=="main__":
+if __name__=="__main__":
     prod_list_voiture()
