@@ -1,5 +1,7 @@
 
 
+from datetime import datetime
+
 def prod_list_voiture():
     """Lecture du fichier contenant les informations et production d'une liste où chaque élément est un dict contenant les informations d'un véhicule"""
     list_voitures=[]
@@ -16,6 +18,22 @@ def prod_list_voiture():
            list_voitures.append(dict_datas)
     return list_voitures
 
+def old_cars():
+    """crée une liste des voitures trop vielles, cad les voitures de plus de 10ans et de plus de 5000km"""
+    list_old_cars
+    now=datetime.now()
+    current_year=now.year
+    for voiture in list_voitures :
+        age=current_year-voiture['annee']
+        if (age>10) & (voiture['kilometrage']>5000):
+            list_old_cars.append(voiture['id'])
+    return list_old_cars
+
+def print_list_cars(list_selected_cars):
+    print("voici la liste des voitures :")
+    for car in list_selected_cars:
+        print(car)
+          
 def menu():
     print("pour afficher les véhicules trop anciens, tapez 1")
     print("pour afficher une liste des véhicules par type de carburant, tapez 2")
@@ -37,6 +55,10 @@ def menu():
             choix=int(choix)
         except:
             menu()
+    
+    if choix==1:
+        list_old_cars=old_cars()
+        print_list_cars(list_old_cars) 
             
 if __name__=="__main__":
     list_voitures=prod_list_voiture()
