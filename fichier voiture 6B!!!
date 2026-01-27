@@ -20,7 +20,7 @@ def prod_list_voiture():
 
 def old_cars():
     """crée une liste des voitures trop vielles, cad les voitures de plus de 10ans et de plus de 5000km"""
-    list_old_cars
+    list_old_cars=[]
     now=datetime.now()
     current_year=now.year
     for voiture in list_voitures :
@@ -29,8 +29,8 @@ def old_cars():
             list_old_cars.append(voiture['id'])
     return list_old_cars
 
-def print_list_cars(list_selected_cars):
-    print("voici la liste des voitures :")
+def print_list_cars(list_selected_cars,list_name):
+    print(f"voici la liste des voitures {list_name} :") 
     for car in list_selected_cars:
         print(car)
           
@@ -58,7 +58,7 @@ def menu():
     
     if choix==1:
         list_old_cars=old_cars()
-        print_list_cars(list_old_cars) 
+        print_list_cars(list_old_cars,"trop vielles") 
             
 if __name__=="__main__":
     list_voitures=prod_list_voiture()
@@ -69,4 +69,3 @@ if __name__=="__main__":
         #si on met print(voiture ['marque']) il affiche just la marque.
         #si on met print(voiture.values())= list des valeurs pour chaque voiture.
         #si on met print(voiture.keys())= juste les nom des 'list'
-        
