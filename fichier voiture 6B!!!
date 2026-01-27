@@ -81,3 +81,4 @@ if __name__=="__main__":
         #si on met print(voiture ['marque']) il affiche just la marque.
         #si on met print(voiture.values())= list des valeurs pour chaque voiture.
         #si on met print(voiture.keys())= juste les nom des 'list'
+        
