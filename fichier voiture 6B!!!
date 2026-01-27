@@ -1,3 +1,5 @@
+
+
 from datetime import datetime
 
 def prod_list_voiture():
@@ -8,10 +10,10 @@ def prod_list_voiture():
            dict_datas={} #on peut aussi mettre dict() {} a la place de {}
            datas=ligne.strip().split('\t')
            dict_datas['id']=int(datas[0])
-           dict_datas['moteur']=datas[1]
+           dict_datas['moteur']=datas[1].lower() 
            dict_datas['kilometrage']=int(datas[2])
            dict_datas['marque']=datas[3]
-           dict_datas['place']=int(datas[4])
+           dict_datas['places']=int(datas[4])
            dict_datas['annee']=int(datas[5])
            list_voitures.append(dict_datas)
     return list_voitures
@@ -31,7 +33,7 @@ def sport_cars():
     """crée une liste des voitures sportives, cad les voitures de plus de 2 ou 4 places et fonctionnant à l'essence"""
     list_sport_cars=[]
     for voiture in list_voitures :
-        if (places<5) & (voiture['moteur']=='essence'):
+        if (voiture["places"]<5) & (voiture['moteur']=='essence'):
             list_sport_cars.append(voiture['id'])
     return list_sport_cars
 
@@ -68,7 +70,7 @@ def menu():
         
     elif choix==3:
         list_sport_cars=sport_cars()
-        print_sport_cars(list_sport_cars,"sportif")
+        print_list_cars(list_sport_cars,"sportives")
             
 if __name__=="__main__":
     list_voitures=prod_list_voiture()
@@ -79,4 +81,3 @@ if __name__=="__main__":
         #si on met print(voiture ['marque']) il affiche just la marque.
         #si on met print(voiture.values())= list des valeurs pour chaque voiture.
         #si on met print(voiture.keys())= juste les nom des 'list'
-        
