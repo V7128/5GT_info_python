@@ -32,8 +32,10 @@ def old_cars():
 def sport_cars():
     """crée une liste des voitures sportives, cad les voitures de plus de 2 ou 4 places et fonctionnant à l'essence"""
     list_sport_cars=[]
+    list_old_cars=old_cars()
     for voiture in list_voitures :
         if (voiture["places"]<5) & (voiture['moteur']=='essence'):
+            if voiture['id'] not in list list_old_cars: 
             list_sport_cars.append(voiture['id'])
     return list_sport_cars
 
@@ -41,6 +43,21 @@ def print_list_cars(list_selected_cars,list_name):
     print(f"voici la liste des voitures {list_name} :") 
     for car in list_selected_cars:
         print(car)
+        
+def print_engine_type():
+      dict_carburant={}
+    
+    for voiture in list_voitures:
+        moteur=voiture['moteur']
+       if moteur not in dict_carburant.keys():
+           dict_carburant['moteur']=[]
+       dict_carburant[moteur].append(voiture['id'])
+       
+    for i in range (40):
+        print('=')
+    print("|   essence   |   diesel   | electrique |")
+    for i in range(40):
+        print('=')
           
 def menu():
     print("pour afficher les véhicules trop anciens, tapez 1")
@@ -67,6 +84,9 @@ def menu():
     if choix==1:
         list_old_cars=old_cars()
         print_list_cars(list_old_cars,"trop vielles")
+    
+    elif choix==2:
+        print_engine_type()
         
     elif choix==3:
         list_sport_cars=sport_cars()
