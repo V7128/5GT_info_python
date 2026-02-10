@@ -35,8 +35,8 @@ def sport_cars():
     list_old_cars=old_cars()
     for voiture in list_voitures :
         if (voiture["places"]<5) & (voiture['moteur']=='essence'):
-            if voiture['id'] not in list list_old_cars: 
-            list_sport_cars.append(voiture['id'])
+            if voiture['id'] not in list_old_cars:
+                list_sport_cars.append(voiture['id'])
     return list_sport_cars
 
 def print_list_cars(list_selected_cars,list_name):
@@ -45,19 +45,51 @@ def print_list_cars(list_selected_cars,list_name):
         print(car)
         
 def print_engine_type():
-      dict_carburant={}
-    
+    dict_carburant={}
     for voiture in list_voitures:
         moteur=voiture['moteur']
-       if moteur not in dict_carburant.keys():
-           dict_carburant['moteur']=[]
-       dict_carburant[moteur].append(voiture['id'])
-       
-    for i in range (40):
-        print('=')
-    print("|   essence   |   diesel   | electrique |")
-    for i in range(40):
-        print('=')
+        if moteur not in dict_carburant.keys():
+            dict_carburant[moteur]=[]
+        dict_carburant[moteur].append(voiture['id'])
+    print(dict_carburant)
+    
+    
+    max_lenght=max(len(dict_carburant['diesel']),len(dict_carburant['essence']),len(dict_carburant['électrique']))    
+    
+    print(40*'=')
+    print("|   Diesel   |   Essence   | Electrique |")
+    print(40*'-')
+    
+    for i in range(max_lenght):
+        print("|",end="")
+        try:
+            car_id=dict_carburant['diesel'][i]
+            blanks=12-len(str(car_id))
+            print(f"{blanks*' '}{car_id}",end="")
+        except:
+            print("            ",end="")
+        
+        print("|",end="")
+        
+        try:
+            car_id=dict_carburant['essence'][i]
+            blanks=12-len(str(car_id))
+            print(f"{blanks*' '}{car_id}",end="")
+        except:
+            print("            ",end="")
+        print("|",end="")
+          
+          
+        try:
+            car_id=dict_carburant['électrique'][i]
+            blanks=12-len(str(car_id))
+            print(f"{blanks*' '}{car_id}",end="")
+        except:
+            print("            ",end="")
+        print("|",end="")
+        print()
+          
+    
           
 def menu():
     print("pour afficher les véhicules trop anciens, tapez 1")
@@ -101,4 +133,3 @@ if __name__=="__main__":
         #si on met print(voiture ['marque']) il affiche just la marque.
         #si on met print(voiture.values())= list des valeurs pour chaque voiture.
         #si on met print(voiture.keys())= juste les nom des 'list'
-        
