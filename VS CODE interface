@@ -13,6 +13,7 @@ class MyWidget(QtWidgets.QMainWindow):
         # 3. Créer des widgets
         label = QLabel("Bonjour")
         bouton = QPushButton("Cliquez ici")
+        button.clicked.connect(ma_fonction) 
         line_edit=QLineEdit()
 
         # 4. Ajouter les widgets au layout
@@ -26,6 +27,10 @@ class MyWidget(QtWidgets.QMainWindow):
         #5. Ajouter le centralwidget à la MainWindow
         self.setCentralWidget(central_widget)
 
+    def ma_fonction(self):
+        mon_texte=line_edit.text()
+        print(mon_texte)
+
 
 
 if __name__=="__main__":
@@ -33,5 +38,3 @@ if __name__=="__main__":
     widget = MyWidget()
     widget.show()
     app.exec()
-
-                                   
