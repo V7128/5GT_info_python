@@ -1,0 +1,12 @@
+from PyQt6 import QtWidgets, QtGui, QtCore
+
+class MyWidget(QtWidgets.QMainWindow):
+    def __init__(self):
+        super(MyWidget, self).__init__()
+
+
+if __name__=="__main__":
+    app = QtWidgets.QApplication([])
+    widget = MyWidget()
+    widget.show()
+    app.exec()
