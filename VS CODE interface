@@ -1,5 +1,6 @@
 from PyQt6 import QtWidgets, QtGui, QtCore
-from PyQt6.QtWidgets import QWidget, QVBoxLayout,QLabel,QPushButton
+from PyQt6.QtWidgets import QWidget, QVBoxLayout,QLabel,QPushButton,QLineEdit
+
 class MyWidget(QtWidgets.QMainWindow):
     def __init__(self):
         super(MyWidget, self).__init__()
@@ -12,10 +13,12 @@ class MyWidget(QtWidgets.QMainWindow):
         # 3. Créer des widgets
         label = QLabel("Bonjour")
         bouton = QPushButton("Cliquez ici")
+        line_edit=QLineEdit()
 
         # 4. Ajouter les widgets au layout
         layout.addWidget(label)
         layout.addWidget(bouton)
+        layout.addWidget(line_edit)
 
         # 4. Appliquer le layout au widget central
         central_widget.setLayout(layout)
@@ -30,3 +33,5 @@ if __name__=="__main__":
     widget = MyWidget()
     widget.show()
     app.exec()
+
+                                   
