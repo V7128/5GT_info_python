@@ -38,3 +38,5 @@ if __name__=="__main__":
     widget = MyWidget()
     widget.show()
     app.exec()
+
+                                   
