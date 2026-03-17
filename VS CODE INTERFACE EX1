@@ -62,13 +62,13 @@ class Gui(QtWidgets.QMainWindow):
             text+=f"<p>elle vaut :"
             text+=f"<ul><li>{round(racine,4)}</li></ul></p>"
 
-        elif delta>0:
+  elif delta>0:
             racine_1=(-b+sqrt(delta)/(2*a)
             racine_2=(-b+sqrt(delta)/(2*a)
             text=f"<p>il y a <b>une racine</b> à cette fonction. </p>"
             text+=f"<p>elles valent :"
-            text+=f"<ul><li>{round(racine_1,4)}</li></ul></p>"
-            text+=f"<ul><li>{round(racine_2,4)}</li></ul></p>"
+            text+=f"<ul><li>{round(racine_1,4)}</li>"
+            text+=f"<li>{round(racine_2,4)}</li></ul></p>"
         
             
 
