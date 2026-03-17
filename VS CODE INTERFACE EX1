@@ -1,3 +1,10 @@
+
+
+
+
+
+
+    
 from PyQt6 import QtWidgets, QtGui, QtCore
 from PyQt6.QtWidgets import QWidget,QLabel,QPushButton,QLineEdit, QVBoxLayout
 from math import sqrt
@@ -57,30 +64,15 @@ class Gui(QtWidgets.QMainWindow):
             text="<p> il n'y a <b>pas de racine</b> à cette fonction. </p>"
 
         elif delta==0:
-            racine=.b/(2*a)
+            racine=-b/(2*a)
             text=f"<p>il y a <b>une racine</b> à cette fonction. </p>"
             text+=f"<p>elle vaut :"
             text+=f"<ul><li>{round(racine,4)}</li></ul></p>"
 
-  elif delta>0:
-            racine_1=(-b+sqrt(delta)/(2*a)
-            racine_2=(-b+sqrt(delta)/(2*a)
+        elif delta>0:
+            racine_1=(-b+sqrt(delta))/(2*a)
+            racine_2=(-b-sqrt(delta))/(2*a)
             text=f"<p>il y a <b>une racine</b> à cette fonction. </p>"
             text+=f"<p>elles valent :"
             text+=f"<ul><li>{round(racine_1,4)}</li>"
             text+=f"<li>{round(racine_2,4)}</li></ul></p>"
-        
-            
-
-
-
-
-
-
-    
-
-if __name__=="__main__":
-    app = QtWidgets.QApplication(sys.argv)
-    gui = Gui()
-    gui.show()
-    app.exec()
