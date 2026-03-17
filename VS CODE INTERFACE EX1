@@ -3,7 +3,7 @@ from PyQt6.QtWidgets import QWidget,QLabel,QPushButton,QLineEdit, QVBoxLayout
 from math import sqrt
 import sys 
 
-class gui(QtWidgets.QMainWindow):
+class Gui(QtWidgets.QMainWindow):
     def __init__(self):
         super(Gui, self).__init__()
         # 1. Créer le widget conteneur central
@@ -42,7 +42,34 @@ class gui(QtWidgets.QMainWindow):
         central_widget.setLayout(layout)
         self.setCentralWidget(central_widget)
 
+    def resoudre(self):
+        a=self.line_edit_a.text()
+        b=self.line_edit_b.text()
+        c=self.line_edit_c.text()
 
+        a=float(a)
+        b=float(b)
+        c=float(c)
+
+        delta=b**2-4*a*c 
+
+        if delta<0: 
+            text="<p> il n'y a <b>pas de racine</b> à cette fonction. </p>"
+        elif delta==0:
+            racine=.b/(2*a)
+            text=f"<p>il y a <b>une racine</b> à cette fonction. </p>"
+            text+=f"<p>elle vaut :"
+            text+=f"<ul><li>{round(racine,4)}</li></ul></p>"
+        elif
+        
+            
+
+
+
+
+
+
+    
 
 if __name__=="__main__":
     app = QtWidgets.QApplication(sys.argv)
