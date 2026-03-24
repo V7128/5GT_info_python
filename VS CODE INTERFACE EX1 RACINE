@@ -1,5 +1,5 @@
 from PyQt6 import QtWidgets, QtGui, QtCore
-from PyQt6.QtWidgets import QWidget,QLabel,QPushButton,QLineEdit, QVBoxLayout, QDialog
+from PyQt6.QtWidgets import QWidget,QLabel,QPushButton,QLineEdit, QVBoxLayout, QDialog, QMessageBox 
 from math import sqrt
 import sys 
 
@@ -73,8 +73,8 @@ class Gui(QtWidgets.QMainWindow):
             text+=f"<li>{round(racine_2,4)}</li></ul></p>"
         print(text)
         
-            
-        dial_reponse=QDialog(text)
+        dial_reponse=QMessageBox()
+        dial_reponse.setText(text)
         dial_reponse.exec()
        
 
@@ -89,24 +89,4 @@ if __name__=="__main__":
     gui = Gui()
     gui.show()
     app.exec()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
