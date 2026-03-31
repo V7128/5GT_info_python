@@ -1,3 +1,25 @@
-CODE POUR MAIN.PY
+CODE POUR MAIN.PY!!!!!!
 
-CODE POUR MODEL.PY
+CODE POUR MODEL.PY!!!!!!
+
+import datetime
+
+class Task(object):
+    def __init__(self):
+        self.text="" 
+        self.priority=int() 
+        self.done=bool() 
+        self.html=""
+        self.date=datetime.datetime.now()
+        self.id=int()
+
+    def gen_html(self): # elle regarde si la tache est faite et met en forme de 'priorité'
+        if self.done :
+            self.html=f'<p style="color:gray"><s>{self.text}</s></p>'
+        elif self.done==False: #ou elif not self.done:
+            if self.priority==0:
+                self.html=f'<p style="color:red">{self.text}</p>'
+            elif self.priority==1:
+                self.html=f'<p style="color:orange">{self.text}</p>'
+            elif self.priority==2:
+                self.html=f'<p style="color:green">{self.text}</p>'
