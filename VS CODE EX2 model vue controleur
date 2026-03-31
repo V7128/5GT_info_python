@@ -23,3 +23,7 @@ class Task(object):
                 self.html=f'<p style="color:orange">{self.text}</p>'
             elif self.priority==2:
                 self.html=f'<p style="color:green">{self.text}</p>'
+
+CODE POUR VIEW.PY!!!!!!
+
+
