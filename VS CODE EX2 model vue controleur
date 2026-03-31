@@ -44,4 +44,19 @@ class Task(object):
 
 CODE POUR VIEW.PY!!!!!!
 
+from PyQt6 import QtWidgets, QtGui, QtCore
+from PyQt6.QtWidgets import QWidget,QLabel,QPushButton,QLineEdit, QVBoxLayout, QDialog, QMessageBox 
 
+class UI(QtWidgets.QMainWindow):
+    def __init__(self):
+        super(UI, self).__init__()
+        self.setWindowTitle("TODO List")
+        #self.setWindowIcon(QIcon("./UI/icons/odego.svg"));
+
+        # 1. Créer le widget conteneur central
+        central_widget = QWidget()
+
+    def set_menu(self):
+        menubar= self.menuBar()
+        appMenu= menubar.addMenu("&Application")
+        taskMenu=menubar.addMenu("&Tâche")
