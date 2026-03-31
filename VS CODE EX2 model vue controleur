@@ -1,6 +1,21 @@
 CODE POUR MAIN.PY!!!!!!
 
+from model import Task
+import sysfrom PyQt6 import QtWidgets, QtGui, QtCore
+
+
+
+if __name__=="__main__":
+    app = QtWidgets.QApplication(sys.argv)
+    gui = Gui()
+    gui.show()
+    app.exec()
+
+
+
+
 CODE POUR MODEL.PY!!!!!!
+
 
 import datetime
 
@@ -23,6 +38,9 @@ class Task(object):
                 self.html=f'<p style="color:orange">{self.text}</p>'
             elif self.priority==2:
                 self.html=f'<p style="color:green">{self.text}</p>'
+
+
+
 
 CODE POUR VIEW.PY!!!!!!
 
