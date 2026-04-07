@@ -1,14 +1,15 @@
 CODE POUR MAIN.PY!!!!!!
 
 from model import Task
-import sysfrom PyQt6 import QtWidgets, QtGui, QtCore
-
+import sys
+from PyQt6 import QtWidgets, QtGui, QtCore
+from view import UI
 
 
 if __name__=="__main__":
     app = QtWidgets.QApplication(sys.argv)
-    gui = Gui()
-    gui.show()
+    ui = UI()
+    ui.show()
     app.exec()
 
 
@@ -46,6 +47,7 @@ CODE POUR VIEW.PY!!!!!!
 
 from PyQt6 import QtWidgets, QtGui, QtCore
 from PyQt6.QtWidgets import QWidget,QLabel,QPushButton,QLineEdit, QVBoxLayout, QDialog, QMessageBox 
+from PyQt6.QtGui import QIcon, QAction 
 
 class UI(QtWidgets.QMainWindow):
     def __init__(self):
@@ -60,3 +62,8 @@ class UI(QtWidgets.QMainWindow):
         menubar= self.menuBar()
         appMenu= menubar.addMenu("&Application")
         taskMenu=menubar.addMenu("&Tâche")
+
+        quitAction= QAction("&Quitter", self)
+        quitAction.SetShortcut("Ctrl+Q")
+        quitAction.setStatusTip("Importer les points directement à partir d'un fichier")
+        quitAction.triggered.connect(lambda : quit(self))
