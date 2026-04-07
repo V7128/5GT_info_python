@@ -47,12 +47,13 @@ CODE POUR VIEW.PY!!!!!!
 
 from PyQt6 import QtWidgets, QtGui, QtCore
 from PyQt6.QtWidgets import QWidget,QLabel,QPushButton,QLineEdit, QVBoxLayout, QDialog, QMessageBox 
-from PyQt6.QtGui import QIcon, QAction 
+from PyQt6.QtGui import QAction 
 
 class UI(QtWidgets.QMainWindow):
     def __init__(self):
         super(UI, self).__init__()
         self.setWindowTitle("TODO List")
+        self.set_menu() 
         #self.setWindowIcon(QIcon("./UI/icons/odego.svg"));
 
         # 1. Créer le widget conteneur central
@@ -64,6 +65,10 @@ class UI(QtWidgets.QMainWindow):
         taskMenu=menubar.addMenu("&Tâche")
 
         quitAction= QAction("&Quitter", self)
-        quitAction.SetShortcut("Ctrl+Q")
-        quitAction.setStatusTip("Importer les points directement à partir d'un fichier")
+        quitAction.setShortcut("Ctrl+Q")
+        quitAction.setStatusTip("Quitter le programme")
+        # fenêtre, texte d'information
+        #petit texte qui s'affiche lorsque la souris passe sur l'action
         quitAction.triggered.connect(lambda : quit(self))
+
+        appMenu.addAction(quitAction) 
