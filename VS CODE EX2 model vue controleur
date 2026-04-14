@@ -88,3 +88,16 @@ class UI(QtWidgets.QMainWindow):
 
 
 CODE POUR CONTROLER.PY!!!!!!
+
+
+
+def quit(self):
+    print("Au revoir")
+    instance= QApplication.instance()
+    if instance:
+        instance.quit()
+
+def addTask(self):
+     dialAddTask=QDialog()
+     widget=QWidget()
+     layout=QVBoxLayout 
