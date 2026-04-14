@@ -84,3 +84,7 @@ class UI(QtWidgets.QMainWindow):
 
         appMenu.addAction(quitAction) 
         taskMenu.addAction(addTaskAction)
+
+
+
+CODE POUR CONTROLER.PY!!!!!!
