@@ -61,12 +61,14 @@ class UI(QtWidgets.QMainWindow):
         #self.setWindowIcon(QIcon("./UI/icons/odego.svg"));
 
         # 1. Créer le widget conteneur central
+
         central_widget = QWidget()
 
     def set_menu(self):
         menubar= self.menuBar()
         appMenu= menubar.addMenu("&Application")
         taskMenu=menubar.addMenu("&Tâche")
+
 
         quitAction= QAction("&Quitter", self)
         quitAction.setShortcut("Ctrl+Q")
@@ -75,7 +77,10 @@ class UI(QtWidgets.QMainWindow):
         #petit texte qui s'affiche lorsque la souris passe sur l'action
         quitAction.triggered.connect(lambda : quit(self))
 
-        appMenu.addAction(quitAction) 
+        addTaskAction= QAction("&Ajouter une tâche", self)
+        addTaskAction.setShortcut("Ctrl+N")
+        addTaskAction.setStatusTip("Ajouter une tâche à, la liste")
+        addTaskAction.triggered.connect(lambda : addTask(self))
 
-
         appMenu.addAction(quitAction) 
+        taskMenu.addAction(addTaskAction)
