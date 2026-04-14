@@ -29,12 +29,11 @@ class Task(object):
         self.date=datetime.datetime.now()
         self.id=int()
 
-      def gen_html(self):
+    def gen_html(self):
         if self.done :
             #car pas nécessaire de mettre True, car issue ou Vrai ou Faux
             #méthode = fonction propre à l'objet
             self.html=f"<p style='color: grey'><s>{self.text}</s></p>"
-
         elif not self.done:
             if self.priority==0:
                 self.html=f"<p style='color: red'>{self.text}</p>"
@@ -46,11 +45,14 @@ class Task(object):
 
 
 
+
 CODE POUR VIEW.PY!!!!!!
 
 from PyQt6 import QtWidgets, QtGui, QtCore
 from PyQt6.QtWidgets import QWidget,QLabel,QPushButton,QLineEdit, QVBoxLayout, QDialog, QMessageBox 
 from PyQt6.QtGui import QAction 
+
+from controler import quit,addTask
 
 class UI(QtWidgets.QMainWindow):
     def __init__(self):
@@ -90,7 +92,6 @@ class UI(QtWidgets.QMainWindow):
 CODE POUR CONTROLER.PY!!!!!!
 
 
-
 from PyQt6.QtWidgets import QPushButton,QLineEdit, QVBoxLayout, QDialog, QComboBox, QApplication
 
 def quit(self):
@@ -100,12 +101,11 @@ def quit(self):
         instance.quit()
 
 def addTask(self):
-     dialAddTask=QDialog()
-     widget=QWidget()
-     layout=QVBoxLayout 
+     self.dialAddTask=QDialog()
+     layout=QVBoxLayout()
 
      #creation du QlineEdit
-     text=QlineEdit()
+     text=QLineEdit()
      list_priority=["élevée", "moyenne", "faible"]
      combo_priority=QComboBox()
      combo_priority.addItems(list_priority)
@@ -118,5 +118,5 @@ def addTask(self):
      layout.addWidget(addButton)
      layout.addWidget(cancelButton)
 
-     dialAddTask.setLayout(layout)
-     dialAddTask.exec()
+     self.dialAddTask.setLayout(layout)
+     self.dialAddTask.exec()
