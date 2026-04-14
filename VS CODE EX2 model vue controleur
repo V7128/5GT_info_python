@@ -91,6 +91,8 @@ CODE POUR CONTROLER.PY!!!!!!
 
 
 
+from PyQt6.QtWidgets import QPushButton,QLineEdit, QVBoxLayout, QDialog, QComboBox, QApplication
+
 def quit(self):
     print("Au revoir")
     instance= QApplication.instance()
@@ -101,3 +103,20 @@ def addTask(self):
      dialAddTask=QDialog()
      widget=QWidget()
      layout=QVBoxLayout 
+
+     #creation du QlineEdit
+     text=QlineEdit()
+     list_priority=["élevée", "moyenne", "faible"]
+     combo_priority=QComboBox()
+     combo_priority.addItems(list_priority)
+
+     addButton=QPushButton("Ajouter")
+     cancelButton=QPushButton("Annuler")
+
+     layout.addWidget(text)
+     layout.addWidget(combo_priority)
+     layout.addWidget(addButton)
+     layout.addWidget(cancelButton)
+
+     dialAddTask.setLayout(layout)
+     dialAddTask.exec()
