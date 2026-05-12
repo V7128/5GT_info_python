@@ -44,15 +44,12 @@ class Task(object):
 
 
 
-
-
 CODE POUR VIEW.PY!!!!!!
-
 from PyQt6 import QtWidgets, QtGui, QtCore
 from PyQt6.QtWidgets import QWidget,QLabel,QPushButton,QLineEdit, QVBoxLayout, QDialog, QMessageBox 
 from PyQt6.QtGui import QAction 
 
-from controler import quit,addTask
+from controler import quit,addTask 
 
 class UI(QtWidgets.QMainWindow):
     def __init__(self):
@@ -60,6 +57,7 @@ class UI(QtWidgets.QMainWindow):
         self.setWindowTitle("TODO List")
         self.set_menu() 
         self.statusBar() 
+        self.task_list=[]
         #self.setWindowIcon(QIcon("./UI/icons/odego.svg"));
 
         # 1. Créer le widget conteneur central
@@ -89,6 +87,7 @@ class UI(QtWidgets.QMainWindow):
 
 
 
+
 CODE POUR CONTROLER.PY!!!!!!
 
 
@@ -111,6 +110,7 @@ def addTask(self):
      combo_priority.addItems(list_priority)
 
      addButton=QPushButton("Ajouter")
+     addButton.clicked.connect(lambda : createTask(self, text.text(),combo_priority.currentIndex()))
      cancelButton=QPushButton("Annuler")
 
      layout.addWidget(text)
@@ -120,3 +120,10 @@ def addTask(self):
 
      self.dialAddTask.setLayout(layout)
      self.dialAddTask.exec()
+
+def createTask(self,text,priority):
+    new_task=Task()
+    new_task.text.priority=priority
+    
+    self.task_list.append(new_task)
+
